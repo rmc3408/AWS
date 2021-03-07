@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "marketb09eb9d4_identitypool_b09eb9d4",
+    "identityPoolName": "agoraa9753e21_identitypool_a9753e21",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "marketb09eb9d4",
-    "userPoolName": "marketb09eb9d4_userpool_b09eb9d4",
+    "resourceNameTruncated": "agoraa9753e21",
+    "userPoolName": "agoraa9753e21_userpool_a9753e21",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -28,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "marketb09eb9d4_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "agoraaa9753e21_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "b09eb9d4",
-    "resourceName": "marketb09eb9d4",
+    "sharedId": "a9753e21",
+    "resourceName": "agoraa9753e21",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [

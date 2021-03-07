@@ -1,6 +1,6 @@
 {
   "auth": {
-    "marketb09eb9d4": {
+    "agoraa9753e21": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
@@ -8,7 +8,7 @@
     }
   },
   "api": {
-    "market": {
+    "agora": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
       "output": {
@@ -16,7 +16,7 @@
           "defaultAuthentication": {
             "authenticationType": "AMAZON_COGNITO_USER_POOLS",
             "userPoolConfig": {
-              "userPoolId": "authmarketb09eb9d4"
+              "userPoolId": "authagoraa9753e21"
             }
           },
           "additionalAuthenticationProviders": []
