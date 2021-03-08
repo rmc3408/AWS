@@ -65,6 +65,7 @@ const myTheme = {
   button: {
     ...AmplifyTheme.button,
     color: "blue",
+    marginRight: "15px",
     padding: "10px",
   },
 };
