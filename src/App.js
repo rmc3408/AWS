@@ -1,8 +1,13 @@
 import React from "react";
 import { Authenticator, AmplifyTheme } from "aws-amplify-react";
 import "./App.css";
+import { BrowserRouter, Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import ProfilePage from './pages/ProfilePage';
+import MarketPage from './pages/MarketPage';
 import { Hub } from "@aws-amplify/core";
 import Auth from "@aws-amplify/auth";
+import NavBar from "./components/Navbar";
 
 class App extends React.Component {
   state = {
@@ -37,7 +42,7 @@ class App extends React.Component {
         this.setState({ user: null });
         break;
       case "signIn_failure":
-        console.error("user sign in failed");
+        console.log("user sign in failed");
         break;
       default:
         break;
@@ -45,9 +50,24 @@ class App extends React.Component {
   };
 
   render() {
-    const { username } = this.state;
-    const sign = username ? (
-      <div>Welcome User </div>
+    const { user } = this.state;
+    console.log(user);
+    const sign = user ? (
+      <BrowserRouter>
+        <>
+          <NavBar user={user}/>
+          <div className="app-container">
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/profile" component={ProfilePage} />
+            <Route exact path="/markets/:marketId" component={({ match }) => <MarketPage id={match.params.marketId}/> } />
+            
+          </div>
+
+        </>
+        
+      
+      
+      </BrowserRouter>
     ) : (
       <Authenticator theme={myTheme}></Authenticator>
     );
@@ -58,15 +78,23 @@ class App extends React.Component {
 
 const myTheme = {
   ...AmplifyTheme,
+  sectionHeader: {
+    ...AmplifyTheme.sectionHeader,
+    backgroundColor: "#324157"
+  },
   formContainer: {
     ...AmplifyTheme.formContainer,
-    paddingTop: "40px",
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '80vh'
   },
   button: {
     ...AmplifyTheme.button,
-    color: "blue",
+    backgroundColor: "#f90",
     marginRight: "15px",
     padding: "10px",
   },
 };
+
 export default App;
