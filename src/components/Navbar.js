@@ -2,13 +2,15 @@ import React from "react";
 import { Menu as Nav, Icon } from "element-react";
 import { SignOut } from "aws-amplify-react";
 import { NavLink } from "react-router-dom";
+import { FaEnvira } from "react-icons/fa";
 
 const Navbar = ({ user }) => (
   <Nav mode="horizontal" theme="dark" defaultActive="1">
     <div className="nav-container">
       <Nav.Item index="1">
         <NavLink to="/" className="nav-link">
-          <span className="app-title">AgoraMarket</span>
+          <FaEnvira size="2em" color="#f90"/>
+          <span className="app-title">VeggyMarket</span>
         </NavLink>
       </Nav.Item>
 
